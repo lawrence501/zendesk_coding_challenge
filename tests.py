@@ -7,7 +7,6 @@ import Utils as util
 from unittest.mock import MagicMock
 from unittest.mock import mock_open
 from unittest.mock import patch
-#from tkinter import *
 
 class DummyStdout(object):
     def write(self, x):
@@ -23,21 +22,9 @@ class MainTests(unittest.TestCase):
         ret = formatDatetimeForDisplay("2010-01-01Z06:06:06Z")
         self.assertFalse(ret["status"])
 
-    #def test_formatDatetimeForDisplay_badFormat2(self):
-    #    ret = formatDatetimeForDisplay("2010-01-01T06:06:06T")
-    #    self.assertFalse(ret["status"])
-
-    def test_formatDatetimeForDisplay_badFormat3(self):
+    def test_formatDatetimeForDisplay_badFormat2(self):
         ret = formatDatetimeForDisplay("cat")
         self.assertFalse(ret["status"])
-        
-    #def test_formatDatetimeForDisplay_badDate(self):
-    #    ret = formatDatetimeForDisplay("201001-01T06:06:06Z")
-    #    self.assertFalse(ret["status"])
-
-    #def test_formatDatetimeForDisplay_badTime(self):
-    #    ret = formatDatetimeForDisplay("2010-01-01T0606:06Z")
-    #    self.assertFalse(ret["status"])
 
     # Tests for processInput
     def test_processInput_sunnyDay(self):
